@@ -1,10 +1,10 @@
-import { login } from "./actions";
+import { signup } from "./actions";
 
 export default function Page() {
   return (
     <>
-      <h1>Sign in</h1>
-      <form action={login}>
+      <h1>Create an account</h1>
+      <form action={signup}>
         <label htmlFor="username">Username</label>
         <input name="username" id="username" />
         <br />
