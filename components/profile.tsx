@@ -10,7 +10,7 @@ import { Label } from "./ui/label";
 import { useToast } from "./ui/use-toast";
 
 export default function Profile({ user }: any) {
-  const [attendance, setAttendance] = useState({});
+  const [attendance, setAttendance] = useState<any>({});
   useEffect(() => {
     const today = new Date();
     const todayFormat = format(today, "yyyy-MM-dd");
