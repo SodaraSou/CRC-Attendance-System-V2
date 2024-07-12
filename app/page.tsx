@@ -1,13 +1,16 @@
+import { redirect } from "next/navigation";
 import { validateRequest } from "@/lib/validate-request";
-import Link from "next/link";
+import Profile from "@/components/profile";
 
 export default async function Home() {
   const { user } = await validateRequest();
+  if (!user) {
+    return redirect("/sign-in");
+  }
 
   return (
-    <main>
-      {user && <Link href={"/sign-out"}>Sign Out</Link>}
-      {!user && <Link href={"/sign-in"}>Sign In</Link>}
-    </main>
+    <div className="p-4 md:p-10 flex flex-col justify-center items-center">
+      <Profile user={user} />
+    </div>
   );
 }

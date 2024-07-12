@@ -1,18 +1,12 @@
-import { login } from "./actions";
+import UserLayout from "@/app/user-layout";
+import SignInForm from "@/components/sign-in-form";
 
-export default function Page() {
+export default function SignInPage() {
   return (
-    <>
-      <h1>Sign in</h1>
-      <form action={login}>
-        <label htmlFor="username">Username</label>
-        <input name="username" id="username" />
-        <br />
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <br />
-        <button>Continue</button>
-      </form>
-    </>
+    <UserLayout>
+      <div className="p-4 md:p-10 flex flex-col justify-center items-center">
+        <SignInForm />
+      </div>
+    </UserLayout>
   );
 }
